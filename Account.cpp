@@ -5,8 +5,7 @@ using namespace std;
 
 Account::Account(double d){
     if (d>=0.0) {
-        balance=d;
-        cout<<"Initial balance of account is "<<balance;
+        setBalance(d);
     }
     
     else{
@@ -15,14 +14,18 @@ Account::Account(double d){
     }
 }
 
-
+void Account::setBalance(double c){
+    
+    balance=c;
+    
+}
 void Account::credit(double y){
     
     balance=balance+y;
 }
 bool Account::debit(double x){ 
     if (x>balance) {
-        cout<<"The amount wanted is bigger than the balance";
+        cout<<"The amount wanted is bigger than the balance"<<endl;
         return false;
     }
     else{
@@ -34,3 +37,4 @@ double Account:: getBalance(){
     
     return balance;
 }
+
