@@ -10,9 +10,13 @@ SavingAccounts::SavingAccounts(double x, double y): Account(x){
         cout<<"Interest rate cannot be negative";
     }
 }
+
+void SavingAccounts::addInterest(){
+    credit(calculateInterest());
+}
+
 double SavingAccounts::calculateInterest(){
     
-    return  getBalance()*interestRate;
-    
+    return getBalance()*interestRate;
+
 }
-   
