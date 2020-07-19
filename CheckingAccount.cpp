@@ -14,13 +14,28 @@ CheckingAccount::CheckingAccount(double x, double f): Account(x){
 }
 void CheckingAccount::credit(double y){
 
-    Account::debit(y);
+    Account::credit(y);
+    applyFee();
     
+}
+void CheckingAccount::applyFee(){
+    
+    Account::setBalance(getBalance()-fee);
+    cout<<"The fee charged on the checking account balance is: "<<fee<<"$"<<endl;
+
+}
+bool CheckingAccount::debit(double x){
+    
+    bool debit = Account::debit(x);
+    
+    if (debit) {
+        applyFee();
+        return true;
+        
+    }
+    else
+        return false;
+
 }
 
-void CheckingAccount::debit(double x){
-    
-    Account::debit(x);
-    
-}
 
