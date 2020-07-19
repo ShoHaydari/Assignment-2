@@ -7,8 +7,7 @@ public:
     
     SavingAccounts(double , double);
     double calculateInterest();
-    
-    
+    void addInterest();
 private:
     double interestRate;
     
