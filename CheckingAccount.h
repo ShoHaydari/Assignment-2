@@ -6,10 +6,10 @@
 class CheckingAccount:public Account{
     
 public:
-    CheckingAccount(double, double);
-    void credit(double);
-    bool debit(double);
-    void applyFee();
+    CheckingAccount(double, double); //default constructor
+    void credit(double); //redefinition of credit function
+    bool debit(double); //redefinition of debit function
+    void applyFee(); //function that will apply a fee on either transaction done
     
 private:
     
